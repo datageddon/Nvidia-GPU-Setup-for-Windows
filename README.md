@@ -29,7 +29,18 @@ Step-by-step instructions on setting up the Nvidia GPU for Deep Learning tasks i
     - [ ] Here you have to download 2 setups. The first one being for Windows x86_64 local, and the second one being Windows x86_64 WSL-Ubuntu 2.0 deb(local).
     - [ ] Install the first one into windows OS.
     - [ ] Install the second one into the WSL2.0 Ubuntu
-  - [ ] You can also just add the following at the end of a **`~/.bashrc`** file for both the root user as well as your user.
+  - [ ] Goto [CuDNN](https://developer.nvidia.com/cudnn), it will ask for an email authentification. 
+    - [ ] Download the CuDNN. 
+    - [ ] It will be a zip file. Extract the zip file.
+    - [ ] Copy the content of `./bin` folder to `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin` or a similar installation folder where your cuda toolkit was installed.
+    - [ ] Copy the content of `./include` folder to `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include` or a similar installation folder where your cuda toolkit was installed.
+    - [ ] Copy the content of `./lib` folder to `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\lib\x64` or a similar installation folder where your cuda toolkit was installed.
+    - [ ] Add the following to your environment variable in windows.
+      - [ ] `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin`
+      - [ ] `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include`
+      - [ ] `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\lib\x64` or `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\lib\`
+        > Note: [This](https://www.computerhope.com/issues/ch000549.htm) is how you set environment variables in windows.
+  - [ ] In WSL, You can also just add the following at the end of a **`~/.bashrc`** file for both the root user as well as your user.
     ```bash
     export PATH=/usr/local/cuda-11.8/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
@@ -40,6 +51,10 @@ Step-by-step instructions on setting up the Nvidia GPU for Deep Learning tasks i
     > **_Note:_** The above script is for x86_64 architecture and ubuntu 22.04 distribution. You can change that according to your system.
 - [ ] [Docker Support](https://docs.nvidia.com/ai-enterprise/deployment-guide-vmware/0.1.0/docker.html), First you have to install Docker Desktop on windows, then install docker on WSL2.0 Ubuntu.
     > **_Note:_** If Docker Desktop for Windows is not installed then docker on WSL2.0 Ubuntu will not be able to communicate with the hardware.
+
+## 💁‍♂️ By now you can use TensorFlow with GPU on your Windows both native and in WSL2.0
+
+
 - [ ] TensorRT
 - [ ] RAPIDS
 - [ ] NCCL
