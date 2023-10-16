@@ -25,7 +25,11 @@ Step-by-step instructions on setting up the Nvidia GPU for Deep Learning tasks i
 - [ ] Now you need to install the following: **[HELP](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)**
   - [ ] [Nvidia Windows Driver x86](https://www.nvidia.com/Download/index.aspx) Install the nvidia driver for _**windows**_, launch it and login on it for which you will need to authenticate via email.
     > **_Note:_** The **CUDA** driver installed on Windows host will be stubbed inside the WSL 2 as <span style="color: green;">libcuda.so</span>, therefore <span style="color: red;">**users must not install any NVIDIA GPU Linux driver within WSL 2**</span>
-  - [ ] You can also just add the following at the end of a **`~/.bashrc`** file
+  - [ ] [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0) and Cuda Developer Tools.
+    - [ ] Here you have to download 2 setups. The first one being for Windows x86_64 local, and the second one being Windows x86_64 WSL-Ubuntu 2.0 deb(local).
+    - [ ] Install the first one into windows OS.
+    - [ ] Install the second one into the WSL2.0 Ubuntu
+  - [ ] You can also just add the following at the end of a **`~/.bashrc`** file for both the root user as well as your user.
     ```bash
     export PATH=/usr/local/cuda-11.8/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
@@ -34,8 +38,8 @@ Step-by-step instructions on setting up the Nvidia GPU for Deep Learning tasks i
     export distro=ubuntu2204
     ```
     > **_Note:_** The above script is for x86_64 architecture and ubuntu 22.04 distribution. You can change that according to your system.
-- [ ] Docker Support
+- [ ] [Docker Support](https://docs.nvidia.com/ai-enterprise/deployment-guide-vmware/0.1.0/docker.html), First you have to install Docker Desktop on windows, then install docker on WSL2.0 Ubuntu.
+    > **_Note:_** If Docker Desktop for Windows is not installed then docker on WSL2.0 Ubuntu will not be able to communicate with the hardware.
 - [ ] TensorRT
-- [ ] CUDA Toolkit and Cuda Developer Tools
 - [ ] RAPIDS
 - [ ] NCCL
