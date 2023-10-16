@@ -30,6 +30,7 @@ Step-by-step instructions on setting up the Nvidia GPU for Deep Learning tasks i
     - [ ] Install the first one into windows OS.
     - [ ] Install the second one into the WSL2.0 Ubuntu
   - [ ] Goto [CuDNN](https://developer.nvidia.com/cudnn), it will ask for an email authentification. 
+    - [ ] Follow [this](https://medium.com/geekculture/install-cuda-and-cudnn-on-windows-linux-52d1501a8805#68ce) for CuDNN related instructions on WSL, as well as [this](https://stackoverflow.com/questions/72493419/how-to-install-cudnn-in-ubuntu-on-wsl2)
     - [ ] Download the CuDNN. 
     - [ ] It will be a zip file. Extract the zip file.
     - [ ] Copy the content of `./bin` folder to `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin` or a similar installation folder where your cuda toolkit was installed.
